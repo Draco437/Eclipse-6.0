@@ -25,11 +25,7 @@ SECRET_KEY = 'django-insecure-qapcl#$1d6wg%#gm(@189_e6@%mrw64-nj-zvnduukxyn&6uz!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['eclipse60acmthapar.vercel.app',
-                 'eclipse60acmthapar-draco437s-projects.vercel.app',
-                 'eclipse60acmthapar-g7ur3z0w5-draco437s-projects.vercel.app',
-                 'eclipse60acmthapar-git-main-draco437s-projects.vercel.app',
-                 'eclipse60acmthapar-phxwebqjd-draco437s-projects.vercel.app',
+ALLOWED_HOSTS = ['.vercel.app',
                  'eclipse6.0.acmthapar.in',
                  'localhost',
                  '127.0.0.1',
