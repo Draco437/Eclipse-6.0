@@ -1275,6 +1275,7 @@ nav * {
 
 .site-footer {
       border: 1px solid white;
+      padding-bottom: 3rem;
     }
 
     .footer-main {
