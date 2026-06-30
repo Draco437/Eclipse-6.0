@@ -183,12 +183,10 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Target your updated HTML IDs and class elements
   const openBtn = document.getElementById('menuOpenBtn');
-  const closeBtn = document.getElementById('closeMenu'); // Updated to match your sidebar close button ID
+  const closeBtn = document.getElementById('closeMenu'); 
   const backdrop = document.getElementById('menuBackdrop');
 
-  // Select the brand new sidebar drawer container and its links
   const sidebarMenu = document.getElementById('sidebarMenu'); 
   const individualLinks = document.querySelectorAll('.sidebar-links a');
 
@@ -213,12 +211,10 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = ''; 
   }
 
-  // Safe checks to bind event listeners if the core elements exist
   if (openBtn) openBtn.addEventListener('click', openDrawerMenu);
   if (closeBtn) closeBtn.addEventListener('click', closeDrawerMenu);
   if (backdrop) backdrop.addEventListener('click', closeDrawerMenu);
 
-  // Auto collapse slide-out menu drawer upon navigating to section anchor tags
   individualLinks.forEach(link => {
     link.addEventListener('click', () => {
       closeDrawerMenu();

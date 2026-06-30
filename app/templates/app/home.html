@@ -16,12 +16,10 @@
         <img src="{% static 'images/acm_logo.png' %}" alt="ACM Logo">
     </div>
 
-    <!-- Mobile Menu Open Hamburger Button Trigger -->
     <button type="button" id="menuOpenBtn" class="menu-toggle" aria-label="Open Menu" style="display: none; background: none; border: none; color: white; cursor: pointer;">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
     </button>
 
-    <!-- Clear Desktop Links List (No hidden layout structures inside here anymore) -->
     <ul class="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#prizes">Prizes</a></li>
@@ -35,9 +33,7 @@
     </div>
 </nav>
 
-<!-- Right Sliding Mobile Sidebar Drawer (With clean footer branding integrated inside) -->
 <div class="sidebar" id="sidebarMenu">
-    <!-- Close Button matches the closeMenu ID trigger -->
     <button type="button" class="close-btn" id="closeMenu" aria-label="Close navigation menu" style="background: none; border: none; color: white; cursor: pointer; font-size: 32px; align-self: flex-end; padding: 10px;">&times;</button>
     
     <div class="sidebar-links" style="display: flex; flex-direction: column; gap: 24px; padding-top: 20px;">
@@ -48,7 +44,6 @@
         <a href="#faq" class="sidebar-link">FAQs</a>
     </div>
 
-    <!-- Integrated Mobile Bottom Branding Panel -->
     <div class="drawer-footer-content" style="margin-top: auto; padding-top: 40px; padding-bottom: 20px;">
         <div class="drawer-logos-row" style="display: flex; gap: 20px; align-items: center; justify-content: center;">
             <img src="{% static 'images/acm_logo.png' %}" alt="ACM Logo" style="height: 28px;">
@@ -58,7 +53,6 @@
     </div>
 </div>
 
-<!-- Backdrop Dimmer View -->
 <div id="menuBackdrop" class="menu-backdrop" style="position: fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5); opacity:0; pointer-events:none; z-index:999; transition: opacity 0.3s;"></div>
 
   <section class="hero" id="home">
