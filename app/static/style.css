@@ -357,10 +357,23 @@ nav * {
     }
 
     @media (max-width: 768px) {
+      .hero {
+    width: 100%;
+    max-width: none;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 120px 62px 80px;
+}
+
       .hero-date {
         top: 40%;
-      left: 33%;
-      font-size: 0.9rem;
+      left: 36%;
+      font-size: 0.7rem;
       font-weight: 100;
       color: white;
       font-family: var(--font-montserrat);
@@ -373,7 +386,7 @@ nav * {
       position: relative;
       z-index: 2;
       font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
-      font-size: 15px;
+      font-size: 12px;
       font-weight: 800;
       letter-spacing: 0.18em;
       color: var(--white);
@@ -395,6 +408,20 @@ nav * {
   line-height: 1;
   -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+}
+.hero-logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+.hero-logo img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    display: block;
 }
     }
 
@@ -1316,7 +1343,7 @@ nav * {
       display: grid;
       grid-template-columns: 1.45fr 1fr;
       min-height: 200px;
-      padding-bottom: 2.6rem;
+      padding-bottom: 2.4rem;
     }
 
     .footer-left {
@@ -1385,7 +1412,7 @@ nav * {
       padding: 16px 56px;
       font-size: 0.78rem;
       color: var(--muted);
-      padding-bottom: 2.6rem;
+      padding-bottom: 2.4rem;
     }
 
     .footer-bottom span {
