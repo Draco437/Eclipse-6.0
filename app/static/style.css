@@ -1297,7 +1297,7 @@ nav * {
       display: grid;
       grid-template-columns: 1.45fr 1fr;
       min-height: 200px;
-      padding-bottom: 26rem;
+      padding-bottom: 2.6rem;
     }
 
     .footer-left {
@@ -1366,7 +1366,7 @@ nav * {
       padding: 16px 56px;
       font-size: 0.78rem;
       color: var(--muted);
-      padding-bottom: 26rem;
+      padding-bottom: 2.6rem;
     }
 
     .footer-bottom span {
