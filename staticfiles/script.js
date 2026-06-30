@@ -183,17 +183,20 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
+  // 1. Target your updated HTML IDs and class elements
   const openBtn = document.getElementById('menuOpenBtn');
-  const closeBtn = document.getElementById('menuCloseBtn');
+  const closeBtn = document.getElementById('closeMenu'); // Updated to match your sidebar close button ID
   const backdrop = document.getElementById('menuBackdrop');
 
-  const navLinksMenu = document.querySelector('nav .nav-links'); 
-  const individualLinks = document.querySelectorAll('nav .nav-links a');
+  // Select the brand new sidebar drawer container and its links
+  const sidebarMenu = document.getElementById('sidebarMenu'); 
+  const individualLinks = document.querySelectorAll('.sidebar-links a');
 
   function openDrawerMenu() {
-    if (navLinksMenu) navLinksMenu.classList.add('is-open');
+    // Uses the .active modifier state class expected by your updated CSS rules
+    if (sidebarMenu) sidebarMenu.classList.add('active');
     if (backdrop) {
-      backdrop.classList.add('is-active');
+      backdrop.classList.add('active');
       backdrop.style.opacity = "1";
       backdrop.style.pointerEvents = "auto";
     }
@@ -201,26 +204,26 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function closeDrawerMenu() {
-    if (navLinksMenu) navLinksMenu.classList.remove('is-open');
+    if (sidebarMenu) sidebarMenu.classList.remove('active');
     if (backdrop) {
-      backdrop.classList.remove('is-active');
+      backdrop.classList.remove('active');
       backdrop.style.opacity = "0";
       backdrop.style.pointerEvents = "none";
     }
     document.body.style.overflow = ''; 
   }
 
-  if (openBtn && closeBtn && backdrop) {
-    openBtn.addEventListener('click', openDrawerMenu);
-    closeBtn.addEventListener('click', closeDrawerMenu);
-    backdrop.addEventListener('click', closeDrawerMenu);
+  // Safe checks to bind event listeners if the core elements exist
+  if (openBtn) openBtn.addEventListener('click', openDrawerMenu);
+  if (closeBtn) closeBtn.addEventListener('click', closeDrawerMenu);
+  if (backdrop) backdrop.addEventListener('click', closeDrawerMenu);
 
-    individualLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        closeDrawerMenu();
-      });
+  // Auto collapse slide-out menu drawer upon navigating to section anchor tags
+  individualLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      closeDrawerMenu();
     });
-  }
+  });
 });
 
 document.addEventListener('DOMContentLoaded', () => {

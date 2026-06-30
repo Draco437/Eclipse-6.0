@@ -138,31 +138,35 @@ nav * {
       letter-spacing: -0.03em;
     }
 
-    @media (max-width: 768px) {
-      nav {
-  position: fixed;
-  top: 16px;                   
-  left: 50%;
-  transform: translateX(-50%);
-  width: 82%;                   
-  max-width: 1200px;             
-  background-color: rgba(27, 27, 27, 0.7); 
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);     
-  border: 1px solid white; 
-  border-radius: 12px;
-  padding: 8px 16px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  z-index: 100;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+    .sidebar {
+    display: none; /* Hide entirely on desktop screens */
 }
 
-    .nav-logo-left img{
-    height:35px;
-    width:auto;
-}
+    @media (max-width: 768px) {
+      nav {
+    position: fixed;
+    top: 16px;                  
+    left: 50%;
+    transform: translateX(-50%);
+    width: 82%;                  
+    max-width: 1200px;             
+    background-color: rgba(27, 27, 27, 0.7); 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);     
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Softened stark white border */
+    border-radius: 12px;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+  }
+
+  .nav-logo-left img {
+    height: 35px;
+    width: auto;
+  }
 
   .nav-logo-right {
     display: none !important;
@@ -172,53 +176,67 @@ nav * {
     display: flex !important;
   }
 
+  /* Hide the standard desktop navbar link elements row on mobile devices */
   .nav-links {
+    display: none !important;
+  }
+
+  /* --- Fixed Mobile Sidebar Drawer --- */
+  .sidebar {
     position: fixed;
     top: 0;
-    right: -100%; 
+    right: -100%; /* Hidden off-screen to the right by default */
     width: 75%;
     max-width: 320px;
     height: 100vh;
-    background-color: #2a2e35; 
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    justify-content: flex-start !important;
-    gap: 0 !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    z-index: 1000;
+    background-color: #161616; /* Clean deep charcoal matching the dark theme */
+    display: flex !important;
+    flex-direction: column;
+    z-index: 1002;
     box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
     transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .nav-links.is-open {
+  /* Sliding active modifier triggered via JavaScript */
+  .sidebar.active {
     right: 0 !important;
   }
 
-  .nav-links li {
+  /* Align close button neatly inside the sidebar drawer */
+  .sidebar #closeMenu {
+    align-self: flex-end;
+    padding: 20px 24px 10px 24px;
+    font-size: 32px;
+    color: white;
+  }
+
+  /* Individual Sidebar Link Items */
+  .sidebar-links {
+    display: flex;
+    flex-direction: column;
     width: 100%;
   }
 
-  .nav-links li a {
+  .sidebar-links a {
     display: block;
     width: 100%;
-    padding: 20px 24px;
+    padding: 18px 24px;
     color: #ffffff !important;
     font-size: 18px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    font-family: sans-serif;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     box-sizing: border-box;
+    transition: background-color 0.2s;
   }
 
-  .drawer-close-row {
-    display: flex !important;
-    width: 100%;
-    justify-content: flex-end;
-    padding: 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    box-sizing: border-box;
+  .sidebar-links a:hover {
+    background-color: rgba(255, 255, 255, 0.03);
   }
 
-  .drawer-footer-content {
+  /* Integrated Bottom Drawer Branding */
+  .sidebar .drawer-footer-content {
     display: flex !important;
     flex-direction: column;
     margin-top: auto; 
@@ -227,7 +245,8 @@ nav * {
     box-sizing: border-box;
   }
 
-  #menuBackdrop.is-active {
+  /* Backdrop Dimmer Overlay state */
+  #menuBackdrop.active {
     opacity: 1 !important;
     pointer-events: auto !important;
   }
