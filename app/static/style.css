@@ -1282,6 +1282,7 @@ nav * {
       display: grid;
       grid-template-columns: 1.45fr 1fr;
       min-height: 200px;
+      padding-bottom: 3rem;
     }
 
     .footer-left {
